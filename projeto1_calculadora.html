@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+      width: 150px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    h1,
+    p {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Calculadora Simples</h1>
+  <p>Digite dois números para somar:</p>
+  <input type="number" id="numero1" placeholder="Número 1">
+  <input type="number" id="numero2" placeholder="Número 2">
+  <br>
+  <button onclick="somar()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function somar() {
+      const numero1 = parseFloat(document.getElementById("numero1").value);
+      const numero2 = parseFloat(document.getElementById("numero2").value);
+      const resultado = numero1 + numero2;
+
+      if (isNaN(resultado)) {
+        document.getElementById("resultado").innerText = "Por favor, insira números válidos.";
+      } else {
+        document.getElementById("resultado").innerText = `Resultado: ${resultado}`;
+      }
+    }
+  </script>
+</body>
+
+</html>
